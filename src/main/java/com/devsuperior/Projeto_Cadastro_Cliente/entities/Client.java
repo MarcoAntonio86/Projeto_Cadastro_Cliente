@@ -1,68 +1,84 @@
 package com.devsuperior.Projeto_Cadastro_Cliente.entities;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "tb_client")
 public class Client {
 
-	private Long id;
-	private String name;
-	private Double income;
-	private LocalDate bithDate;
-	private Integer children;
-	
-	
-	public Client() {
-		
-	}
-	
-	public Client(Long id, String name, Double income, LocalDate bithDate, Integer children) {
-		this.id = id;
-		this.name = name;
-		this.income = income;
-		this.bithDate = bithDate;
-		this.children = children;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    private String name;
+    private String cpf;
+    private Double income;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
 
-	public String getName() {
-		return name;
-	}
+    private Integer children;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Client() {
+    }
 
-	public Double getIncome() {
-		return income;
-	}
+    public Client(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
+        this.id = id;
+        this.name = name;
+        this.cpf = cpf;
+        this.income = income;
+        this.birthDate = birthDate;
+        this.children = children;
+    }
 
-	public void setIncome(Double income) {
-		this.income = income;
-	}
+    // Getters e Setters
 
-	public LocalDate getBithDate() {
-		return bithDate;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setBithDate(LocalDate bithDate) {
-		this.bithDate = bithDate;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Integer getChildren() {
-		return children;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setChildren(Integer children) {
-		this.children = children;
-	}
-	
-	
-	
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Double getIncome() {
+        return income;
+    }
+
+    public void setIncome(Double income) {
+        this.income = income;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Integer getChildren() {
+        return children;
+    }
+
+    public void setChildren(Integer children) {
+        this.children = children;
+    }
 }
