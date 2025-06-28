@@ -19,7 +19,7 @@ public class DatabaseSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        repository.save(new Client(null, "Maria Silva", "12345678901", 5000.0, LocalDate.of(1990, 5, 20), 2));
+        repository.save(new Client(null, "Maria Silva", "12345678901", 6500.0, LocalDate.of(1990, 5, 20), 2));
         repository.save(new Client(null, "João Oliveira", "98765432100", 7200.0, LocalDate.of(1985, 3, 15), 1));
         repository.save(new Client(null, "Ana Paula", "45678912300", 4500.0, LocalDate.of(1995, 8, 10), 0));
         repository.save(new Client(null, "Carlos Souza", "32165498700", 10000.0, LocalDate.of(1980, 11, 5), 3));
